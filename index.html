@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hike Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div id="app-wrapper">
+        <div id="title-container">
+            <h1 id="title">Hike Calculator</h1>
+        </div>
+        <div id="app-body">
+
+            <!-- this is the first row -->
+            <div class="row">
+                <div class="app-text">
+                    Enter your base salary
+                </div>
+                <div>
+                    <input class="text-box" type="number" min="0" id="baseSalary" />
+                </div>
+            </div>
+
+            <!-- this is the second row -->
+            <div class="row">
+                <div class="app-text">
+                    Enter your hike percentage
+                </div>
+                <div>
+                    <input class="text-box" type="number" min="0" id="hikePercentage" />
+                </div>
+            </div>
+               
+            <!-- this is the third row -->
+            <div class="row">
+                <div class="app-text">
+                    Your new base salary
+                </div>
+                <div id="newBaseSalary"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
