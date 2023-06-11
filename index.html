@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="styles.css">
 
 </head>
+
 <body>
     <div id="app-wrapper">
         <div id="title-container">
@@ -15,34 +17,50 @@
         </div>
         <div id="app-body">
 
-            <!-- this is the first row -->
-            <div class="row">
-                <div class="app-text">
-                    Enter your base salary
+            <form id="hikeCalciForm">
+                <!-- this is the first row -->
+                <div class="row">
+                    <div class="app-text">
+                        Enter your base salary
+                    </div>
+                    <div>
+                        <input class="text-box" type="number" min="0" id="baseSalary"
+                            onkeyup="handleInput(this, 'BASE_SALARY')" />
+                    </div>
                 </div>
-                <div>
-                    <input class="text-box" type="number" min="0" id="baseSalary" />
-                </div>
-            </div>
 
-            <!-- this is the second row -->
-            <div class="row">
-                <div class="app-text">
-                    Enter your hike percentage
+                <!-- this is the second row -->
+                <div class="row">
+                    <div class="app-text">
+                        Enter your hike in %
+                    </div>
+                    <div>
+                        <input class="text-box" type="number" min="0" id="hikePercentage"
+                            onkeyup="handleInput(this, 'HIKE_PERCENTAGE')" />
+                    </div>
                 </div>
-                <div>
-                    <input class="text-box" type="number" min="0" id="hikePercentage" />
+                <div class="cta-container">
+                    <input type="submit" value="Calculate" id="submit-btn" class="btn" />
+                    <input type="button" value="Clear" id="clear-btn" class="btn" onclick="resetValues()" />
                 </div>
-            </div>
-               
+            </form>
+
             <!-- this is the third row -->
-            <div class="row">
-                <div class="app-text">
-                    Your new base salary
+            <div id="result-container">
+                <div class="row">
+                    <div class="app-text">
+                        Your estimated base salary is <span class="app-text salary" id="newBaseSalary"></span>
+                    </div>
                 </div>
-                <div id="newBaseSalary"></div>
+                <div class="row">
+                    <div class="app-text">
+                        Your estimated take home salary <span class="app-text salary" id="newTakeHomeSalary"></span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
